@@ -27,3 +27,11 @@ Make sure to save a complete url string for this image.
 
 ### Example:
 featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
+
+
+## Mars Facts
+
+Visit the Mars Facts webpage here and use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
+
+Use Pandas to convert the data to a HTML table string.
+
