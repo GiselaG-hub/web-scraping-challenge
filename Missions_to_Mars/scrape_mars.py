@@ -13,8 +13,6 @@ def init_browser():
     executable_path = {'executable_path': 'C:/Users/Gisela Gutierrez/web-scraping-challenge-HW/HW/Missions_to_Mars/chromedriver_win32/chromedriver'}
     return Browser('chrome', **executable_path, headless=False)
     
-
-
 def scrape():
     # create content dict that we can insert into mongo
     content = {}
@@ -98,7 +96,7 @@ def scrape():
     results = browser.find_by_xpath(xpath)
 
     # Placeholder
-    hemisphere_image_urls = []
+    mars_hemisphere_urls = []
 
     # Loop through all 4 links
     for i in range(4):
@@ -123,13 +121,13 @@ def scrape():
         soup = bs(html, 'html.parser')
         
         # Save the image url
-        hemisphere_image_urls.append({"title": header, "image_url": soup.find("div", class_="downloads").a["href"]})
+        mars_hemisphere_urls.append({"title": header, "image_url": soup.find("div", class_="downloads").a["href"]})
         
         # Go back to the original page
         browser.back()
         time.sleep(2)
 
-    content["hemisphere_image_urls"] = hemisphere_image_urls
+    content["mars_hemisphere_urls"] = mars_hemisphere_urls
 
     browser.quit()
 
