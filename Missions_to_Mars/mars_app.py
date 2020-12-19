@@ -34,8 +34,8 @@ def scrape():
         "news_title": news["news_title"],
         "news_blurb": news["news_blurb"],
         "featured_image_url": news["featured_image_url"],
-        "df_mars_facts": news["mars_facts_html"],
-        "hemisphere_image_urls": news["hemisphere_image_urls"]
+        "mars_facts": news["mars_facts_html"],
+        "mars_hemisphere_urls": news["mars_hemisphere_urls"]
     }
 
     # Delete previous news content, if it exists
@@ -45,7 +45,7 @@ def scrape():
     mongo.db.mars_db.insert_one(content)
 
     # Redirect back to home page
-    return redirect("http://localhost:5000/", code=302)
+    return redirect("http://localhost:5050/", code=302)
 
     # Redirect back to home page
     return redirect("/", code=302)
